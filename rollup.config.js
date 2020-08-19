@@ -6,11 +6,13 @@ import {terser} from 'rollup-plugin-terser'
 export default {
   input: 'index.js',
   output: [{
-    file: 'dist/utils.js',
-    format: 'cjs'
+    file: 'dist/xcedu-share.js',
+    format: 'umd',
+    name: 'XcShare'
   }, {
-    file: 'dist/utils.min.js',
-    format: 'cjs',
+    file: 'dist/xcedu-share.min.js',
+    format: 'umd',
+    name: 'XcShare',
     plugins: [terser()]
   }],
   plugins: [
