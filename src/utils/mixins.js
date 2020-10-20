@@ -3,7 +3,7 @@
     return
   }
   const toQueryString = params => Object.keys(params).reduce((target, key) => {
-    target.push(`${key}=${query[key]}`)
+    target.push(`${key}=${params[key]}`)
     return target
   }, []).join('&')
 
