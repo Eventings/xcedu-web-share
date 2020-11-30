@@ -8,9 +8,10 @@ const instance = axios.create({
   transformRequest: [function transformRequest (data) {
     return JSON.stringify(data)
   }],
-  transformResponse: [function transformResponse (data) {
-    return data.data
-  }],
+  // transformResponse: [function transformResponse (data) {
+  //   alert('data:' + data)
+  //   return data.data
+  // }],
   responseType: 'json'
 })
 
@@ -47,7 +48,7 @@ const isTokenExpries = response => {
 
 instance.interceptors.response.use(response => {
   if (response.data) {
-    return response.data
+    return response.data.data
   }
 }, error => {
   if (isTokenExpries(error.response)) {
