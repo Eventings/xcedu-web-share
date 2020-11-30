@@ -20,15 +20,15 @@ instance.interceptors.request.use(config => {
   if (token) {
     config.headers.Authorization = token
   }
-  if (config.method == 'post') {
+  if (config.method === 'post' || config.method === 'put') {
     config.data = {
       ...config.data,
       _t: Date.parse(new Date()) / 1000
     }
-  } else if (config.method == 'get') {
+  } else if (config.method === 'get' || config.method === 'delete') {
     config.params = {
-      _t: Date.parse(new Date()) / 1000,
-      ...config.params
+      ...config.params,
+      _t: Date.parse(new Date()) / 1000
     }
   }
   return config
