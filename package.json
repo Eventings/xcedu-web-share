@@ -1,36 +1,38 @@
 {
   "name": "@xcedu/web-share",
-  "version": "1.0.9",
+  "main": "./index.js",
   "description": "晓窗科技教育一体化平台共享模块",
-  "main": "dist/utils.js",
-  "scripts": {
-    "build": "rimraf dist && rollup -c"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/xiaochuang-edu/xcedu-web-share.git"
-  },
-  "files": [
-    "dist/*.js"
-  ],
-  "keywords": [
-    "share",
-    "single-spa"
-  ],
-  "author": "Xuan Hui <541951523@qq.com>",
+  "version": "1.0.0",
+  "author": "17730004990 <541951523@qq.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/xiaochuang-edu/xcedu-web-share/issues"
+  "private": false,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --progress --open --hot",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
-  "homepage": "https://github.com/xiaochuang-edu/xcedu-web-share#readme",
+  "dependencies": {
+    "ali-oss": "^6.9.1"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
   "devDependencies": {
-    "@babel/core": "^7.9.6",
-    "@babel/preset-env": "^7.9.6",
-    "@rollup/plugin-node-resolve": "^7.1.3",
-    "rimraf": "^3.0.2",
-    "rollup": "^2.8.2",
-    "rollup-plugin-babel": "^4.4.0",
-    "rollup-plugin-terser": "^5.3.0"
-  },
-  "dependencies": {}
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "cross-env": "^5.0.5",
+    "css-loader": "^0.28.7",
+    "file-loader": "^1.1.4",
+    "html-webpack-plugin": "^3.2.0",
+    "sass": "^1.26.10",
+    "sass-loader": "^7.0.3",
+    "vue": "^2.5.11",
+    "vue-loader": "^13.0.5",
+    "vue-template-compiler": "^2.4.4",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.9.1"
+  }
 }
