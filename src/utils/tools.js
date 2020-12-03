@@ -32,7 +32,9 @@ function batchDownloadOSS (ids) {
             'content-disposition': 'attachment; filename="' + data[i].displayName + '"'
           }
         });
-        window.open(result);
+        setTimeout(function (link) {
+          window.location = link;
+        }.bind(null, result), i * 1200);
       }
     });
   });
