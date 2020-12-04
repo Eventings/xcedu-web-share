@@ -1,4 +1,3 @@
-
 function boot(store, router, Root) {
   if (typeof window.Vue === 'undefined') {
     throw new ReferenceError('No Gobal Vue found!')
